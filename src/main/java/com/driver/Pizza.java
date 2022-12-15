@@ -8,9 +8,9 @@ public class Pizza {
     private int bagPrice;
     private int cheesePrice;
     private int toppingsPrice;
-    boolean extraToppingsadded=false;
-    boolean extraCheeseadded=false;
-    boolean extraBagadded=false;
+    boolean extraToppingsadded;
+    boolean extraCheeseadded;
+    boolean extraBagadded;
     boolean extraBillgenerated;
 
     public Pizza(Boolean isVeg){
@@ -20,7 +20,6 @@ public class Pizza {
         if(isVeg==true){
             this.price=300;
             this.toppingsPrice=70;
-            //this.bill="Base Price Of The Pizza: "+price+"\n";
         }
        else {
             this.price=400;
@@ -30,6 +29,7 @@ public class Pizza {
        this.extraBagadded=false;
        this.extraCheeseadded=false;
        this.extraToppingsadded=false;
+       this.extraBillgenerated=false;
         this.bill=this.bill+"Base Price Of The Pizza: "+this.price+"\n";
 
     }
@@ -38,7 +38,7 @@ public class Pizza {
      }
     public void addExtraCheese(){
         if(extraCheeseadded==false){
-            this.price=price+this.cheesePrice;
+            this.price=this.price+this.cheesePrice;
 
             extraCheeseadded=true;
         }
@@ -48,7 +48,6 @@ public class Pizza {
     public void addExtraToppings(){
             if(extraToppingsadded==false){
                 this.price=this.price+this.toppingsPrice;
-
                 extraToppingsadded=true;
             }
 
