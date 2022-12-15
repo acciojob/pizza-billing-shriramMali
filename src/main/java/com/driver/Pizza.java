@@ -23,7 +23,9 @@ public class Pizza {
             this.bill=this.bill+"Base Price Of The Pizza: "+price+"\n";
         }
     }
-
+     public int getPrice(){
+        return this.price;
+     }
     public void addExtraCheese(){
         if(extraCheeseadded==false){
             this.price=price+this.extraCheese;
